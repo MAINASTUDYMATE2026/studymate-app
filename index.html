@@ -17,6 +17,76 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content Area */
+        main {
+            flex: 1;
+            display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
@@ -98,6 +168,7 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             border-radius: 12px;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .feature:hover {
@@ -146,7 +217,40 @@
         }
 
         /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+        }
+
         @media (max-width: 600px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-logo {
+                font-size: 24px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
             .container {
                 padding: 40px 20px;
                 border-radius: 16px;
@@ -177,40 +281,56 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">📚</div>
-        <h1 class="title">Studymate</h1>
-        <p class="creator">Created by <span class="creator-name">BRIAN MAINA</span></p>
-        
-        <p class="tagline">
-            Your personal study companion designed to help you learn, revise, practice questions, and organize your studies effectively.
-        </p>
-
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">🎓</div>
-                <div class="feature-text">Learn</div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">✏️</div>
-                <div class="feature-text">Revise</div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">❓</div>
-                <div class="feature-text">Practice</div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📋</div>
-                <div class="feature-text">Organize</div>
-            </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">📚 Studymate</a>
+            <ul class="nav-links">
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#revise">Revise</a></li>
+                <li><a href="#practice">Practice</a></li>
+                <li><a href="#organize">Organize</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <button class="cta-button">Get Started</button>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="logo">📚</div>
+            <h1 class="title">Studymate</h1>
+            <p class="creator">Created by <span class="creator-name">BRIAN MAINA</span></p>
+            
+            <p class="tagline">
+                Your personal study companion designed to help you learn, revise, practice questions, and organize your studies effectively.
+            </p>
 
-        <footer>
-            <p>&copy; 2026 Studymate. All rights reserved. | MIT License</p>
-        </footer>
-    </div>
+            <div class="features">
+                <div class="feature" id="learn">
+                    <div class="feature-icon">🎓</div>
+                    <div class="feature-text">Learn</div>
+                </div>
+                <div class="feature" id="revise">
+                    <div class="feature-icon">✏️</div>
+                    <div class="feature-text">Revise</div>
+                </div>
+                <div class="feature" id="practice">
+                    <div class="feature-icon">❓</div>
+                    <div class="feature-text">Practice</div>
+                </div>
+                <div class="feature" id="organize">
+                    <div class="feature-icon">📋</div>
+                    <div class="feature-text">Organize</div>
+                </div>
+            </div>
+
+            <button class="cta-button">Get Started</button>
+
+            <footer>
+                <p>&copy; 2026 Studymate. All rights reserved. | MIT License</p>
+            </footer>
+        </div>
+    </main>
 
     <!-- Link to external CSS -->
     <link rel="stylesheet" href="style.css">
