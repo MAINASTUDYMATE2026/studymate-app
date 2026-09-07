@@ -4,8 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudyMate Practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .question-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f5f7fa;
+            border-radius: 12px;
+        }
+
+        .question-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            padding: 12px 15px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .show-answer-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .show-answer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .answer {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            border-radius: 4px;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .answer.show {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .question-text {
+                font-size: 16px;
+            }
+
+            .option {
+                font-size: 14px;
+                padding: 10px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Practice Questions</h1>
+    <div class="container">
+        <h1>Practice Questions</h1>
+
+        <!-- Question 1 -->
+        <div class="question-section">
+            <div class="question-title">Question 1</div>
+            <div class="question-text">What is the capital of France?</div>
+            <div class="options">
+                <div class="option">A) London</div>
+                <div class="option">B) Paris</div>
+                <div class="option">C) Berlin</div>
+                <div class="option">D) Madrid</div>
+            </div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer">Correct Answer: B) Paris</div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-section">
+            <div class="question-title">Question 2</div>
+            <div class="question-text">Which planet is known as the Red Planet?</div>
+            <div class="options">
+                <div class="option">A) Venus</div>
+                <div class="option">B) Jupiter</div>
+                <div class="option">C) Mars</div>
+                <div class="option">D) Saturn</div>
+            </div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer">Correct Answer: C) Mars</div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-section">
+            <div class="question-title">Question 3</div>
+            <div class="question-text">What is the largest ocean on Earth?</div>
+            <div class="options">
+                <div class="option">A) Atlantic Ocean</div>
+                <div class="option">B) Indian Ocean</div>
+                <div class="option">C) Pacific Ocean</div>
+                <div class="option">D) Arctic Ocean</div>
+            </div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer">Correct Answer: C) Pacific Ocean</div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-section">
+            <div class="question-title">Question 4</div>
+            <div class="question-text">Who wrote "Romeo and Juliet"?</div>
+            <div class="options">
+                <div class="option">A) Jane Austen</div>
+                <div class="option">B) Charles Dickens</div>
+                <div class="option">C) Mark Twain</div>
+                <div class="option">D) William Shakespeare</div>
+            </div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer">Correct Answer: D) William Shakespeare</div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-section">
+            <div class="question-title">Question 5</div>
+            <div class="question-text">What is the chemical symbol for gold?</div>
+            <div class="options">
+                <div class="option">A) Gd</div>
+                <div class="option">B) Go</div>
+                <div class="option">C) Au</div>
+                <div class="option">D) Ag</div>
+            </div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer">Correct Answer: C) Au</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            answer.classList.toggle('show');
+            
+            if (answer.classList.contains('show')) {
+                button.textContent = 'Hide Answer';
+            } else {
+                button.textContent = 'Show Answer';
+            }
+        }
+    </script>
 </body>
 </html>
