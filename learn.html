@@ -208,6 +208,26 @@
             line-height: 1.5;
         }
 
+        .start-learning-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .start-learning-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
         .back-button {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -351,6 +371,17 @@
                     <div class="learning-item">
                         <div class="item-title">➕ Mathematics</div>
                         <div class="item-description">Master math concepts from basic arithmetic to advanced calculus.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Study Materials</h2>
+                <div class="learning-items">
+                    <div class="learning-item">
+                        <div class="item-title">General Chemistry</div>
+                        <div class="item-description">Learn atoms, elements, chemical bonding, acids, bases, and chemical reactions.</div>
+                        <button class="start-learning-btn">Start Learning</button>
                     </div>
                 </div>
             </div>
